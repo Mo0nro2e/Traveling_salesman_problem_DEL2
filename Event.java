@@ -12,7 +12,9 @@ public class Event{
 
 	}
 
-	public
+	public setTime(time){
+		this.time = 100;
+	}
 
 
 	public double time(){
