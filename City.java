@@ -1,51 +1,29 @@
-public class Event {
+public class City {
   //Attributes
-  private char type;
-  private double time;
-  private Individual individual;
+  private String name;
+  private double x, y;
 
   //Constructor
-  public Event(char type, double time, Individual individual){
-    this.type = type;
-    this.time = time;
-    this.individual = individual;
+  public City(String name, double x, double y) {
+    this.name = name;
+    this.x = x;
+    this.y = y;
   }
 
   //Getters
-  public Individual individual() {
-    return individual;
+  public double x() {
+    return x;
   }
-  public double time() {
-    return time;
+  public double y() {
+    return y;
   }
-  public char type() {
-    return type;
-  }
-
-  //Returns a textual representation of this event.
-  public String toString() {
-    return "Event type: " + type() + ", time: " + time() + ", individual: " + individual();
+  public String name() {
+    return name;
   }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  //Returns the Euclidean distance between two cities.
+  public double distanceTo(City other) {
+    return Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
+  }
 
 }
