@@ -8,7 +8,7 @@ public class Individual{
       
     int i = cities.length - 1;
     int j = RandomUtils.getRandomValue(cities.length);
-    City[] aux = new array[2];
+    City [] aux = new City[2];
     aux[0] = cities[i]; 
     aux[1] = cities[j];
     cities[i] = aux[1];
