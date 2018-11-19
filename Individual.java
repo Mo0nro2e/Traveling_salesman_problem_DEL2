@@ -2,11 +2,10 @@ public class Individual{
 
   private double cost;
   private City[] path;
-  private cities[];
+  private City[] cities;
 
 
   public Individual(City[] cities){
-      
     int i = cities.length - 1;
     int j = RandomUtils.getRandomValue(cities.length);
     City [] aux = new City[2];
@@ -14,14 +13,13 @@ public class Individual{
     aux[1] = cities[j];
     cities[i] = aux[1];
     cities[j] = aux[0];
-
   }
 
   /*public double cost(){
     return cost;
   }*/
 
-  public City[] path(){
+  public City[] path(Individual bob){
     for( int i=0; i < cities.length-1; i++){
       System.out.print(cities[i] + ", ");
     }

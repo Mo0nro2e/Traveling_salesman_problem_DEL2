@@ -1,9 +1,11 @@
 public class Main {
 	public static void main(String[] args) {
+		
+		City[] byer;
 		Individual bob;
-	 	City[] listeafbyer = new CityGenerator().generate();
-	 	bob = new Individual(listeafbyer);
-	 	System.out.println(bob.path());
+	 	byer = new CityGenerator().generate();
+	 	bob = new Individual(byer);
+	 	System.out.println(bob.path(bob));
 
 	}
 
