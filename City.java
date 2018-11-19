@@ -22,7 +22,7 @@ public class City{
 	}
 
 	public double distanceTo(City ohter){
-		return (Math.sqat(Math.pow(this.xCoordinate - ohter.getX(),2) + Math.pow(this.yCoordinate - ohter.getY(),2)));
+		return (Math.sqrt(Math.pow(this.xCoordinate - ohter.getX(),2) + Math.pow(this.yCoordinate - ohter.getY(),2)));
 	}
 
 
