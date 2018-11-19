@@ -6,10 +6,17 @@ public class Individual{
 
     public Individual(City[] cities){
       
-      for(int i=cities.length - 1; counter >= 0;counter--){
-        cities[i] =  cities[RandomUtils.getRandomValue(cities.length)];
+    int i = cities.length - 1;
+    int j = RandomUtils.getRandomValue(cities.length);
+    aux [] = new array[2];
+    aux[0] = cities[i]; 
+    aux[1] = cities[j];
+    cities[i] = aux[1];
+    cities[j] = aux[0];
 
-    }
+
+
+    
 
 
     public cost(){
