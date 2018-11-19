@@ -1,33 +1,33 @@
-public class City{
-	private String name;
-	private double xCoordinate;
-	private double yCoordinate;
+public class Event {
+  //Attributes
+  private char type;
+  private double time;
+  private Individual individual;
 
-	public City(String name, double xCoordinate, double yCoordinate){
-		this.name = name;
-		
-		this.xCoordinate = xCoordinate;
-		
-		this.yCoordinate = yCoordinate;
-		
-	}
+  //Constructor
+  public Event(char type, double time, Individual individual){
+    this.type = type;
+    this.time = time;
+    this.individual = individual;
+  }
 
+  //Getters
+  public Individual individual() {
+    return individual;
+  }
+  public double time() {
+    return time;
+  }
+  public char type() {
+    return type;
+  }
 
-	public String getName(){
-		return name;
-	}
+  //Returns a textual representation of this event.
+  public String toString() {
+    return "Event type: " + type() + ", time: " + time() + ", individual: " + individual();
+  }
 
-	public double getX(){
-		return xCoordinate;
-	}
-
-	public double getY(){
-		return yCoordinate;
-	}
-
-	public double distanceTo(City ohter){
-		return (Math.sqat(Math.pow(this.xCoordinate - City.getX(),2) + Math.pow(this.yCoordinate - City.getY(),2)));
-	}
+}
 
 
 
