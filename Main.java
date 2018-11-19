@@ -5,7 +5,7 @@ public class Main {
 		Individual bob;
 	 	byer = new CityGenerator().generate();
 	 	bob = new Individual(byer);
-	 	System.out.println(bob.path(bob));
+	 	System.out.println(bob.path());
 
 	}
 
