@@ -5,11 +5,11 @@ public class City{
 
 	public City(String name, double xCoordinate, double yCoordinate){
 		this.name = name;
-		System.out.println("The name of your city is" + name)
+		
 		this.xCoordinate = xCoordinate;
-		System.out.println("" + name)
+		
 		this.yCoordinate = yCoordinate;
-		System.out.println("with the coordinates" + yCoordinate "and" + xCoordinate );
+		
 	}
 
 
