@@ -2,6 +2,7 @@ public class Individual{
 
   private double cost;
   private City[] path;
+  private cities[];
 
 
   public Individual(City[] cities){
@@ -20,9 +21,13 @@ public class Individual{
     return cost;
   }*/
 
-  /*public City[] path(){
+  public City[] path(){
+    for( int i=0; i < cities.length-1; i++){
+      System.out.print(cities[i] + ", ");
+    }
+      
     return path;
-  }*/
+  }
 
   
 
