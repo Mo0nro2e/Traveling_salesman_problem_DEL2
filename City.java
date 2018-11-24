@@ -6,6 +6,7 @@ public class City{
 		this.name = name;
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
+
 	}
 
 
