@@ -1,4 +1,6 @@
+import java.util.Arrays;
 public class Individual{
+
 
   private double cost;
   private City[] path;
@@ -9,25 +11,28 @@ public class Individual{
     int i = cities.length - 1;
     int j = RandomUtils.getRandomValue(cities.length);
     City [] aux = new City[2];
-    aux[0] = cities[i]; 
+    aux[0] = cities[i];
     aux[1] = cities[j];
     cities[i] = aux[1];
     cities[j] = aux[0];
+
+    this.cities = cities;
   }
 
   /*public double cost(){
     return cost;
   }*/
 
-  public City[] path(Individual bob){
+  public City[] path(){
     for( int i=0; i < cities.length-1; i++){
-      System.out.print(cities[i] + ", ");
+      String hej = cities[i].toString();
+      System.out.println( hej + ", ");
     }
-      
+
     return path;
   }
 
-  
+
 
 
 
