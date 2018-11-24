@@ -4,18 +4,25 @@ public class Individual {
 
   //Constructor
   public Individual(City[] cities) {
-    int random = RandomUtils.getRandomValue(cities.length);
-    int lastIndex = cities.length - 1;
-    City aux = cities[random];
-    cities[random] = cities[lastIndex];
-    cities[lastIndex] = aux;
-    this.cities = cities; 
-    
+    //copies the array to avoid issues with pointers
+    individual = new City[cities.length];
+    for(int i=0; i<cities.length; i++)
+      individual[i] = cities[i]; //.copy(); //er ikke sikker på om det er nødvendigt at lave copy her.
+    //shuffles the array
+    for(int i=0; i<individual.length; i++) {
+      int randomIndex = RandomUtils.getRandomValue(individual.length);
+      City auxiliaryVariable = cities[randomIndex];
+      individual[randomIndex] = individual[i];
+      individual[i] = auxiliaryVariable;
+    }
   }
 
   //Returns a copy of this individual's path.
   public City[] path() {
-
+   City[] copy = new City[individual.length];
+   for(int i=0; i<individual.length; i++)
+      copy[i] = individual[i];
+   return copy;
   }
 
   //Returns the cost assigned to this individual's path.
@@ -32,6 +39,17 @@ public class Individual {
   public Individual reproduce() {
 
   }
+
+  public String toString() {
+    String city = "";
+    String path = "";
+    for(City c : individual) {
+      city = c.name() + ", ";
+      path = path + city;
+    }
+    return path;
+  }
+
 }
 
 
