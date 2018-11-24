@@ -26,4 +26,7 @@ public class City {
     return Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
   }
 
+  public City copy() {
+    return new City(name, x, y);
+  }
 }
