@@ -3,7 +3,7 @@ public class Individual{
 
   private double cost;
   private City[] path;
-  private City[] cities;
+  private City[] individual;
   int index, newPos;
   City aux;
 
@@ -19,33 +19,38 @@ public class Individual{
         cities[i] = cities[newPos];
         cities[newPos] = aux;
       }
-    this.cities = cities;
     }
   }
 
-  /*public double cost(){
+  public double cost(){
+    double cost = cost + individual[individual.length-1].distanceTo(individual[0]);
+    double costBetweenTwoCities = 0;
+    for(int i=1; i<individual.length; i++) {
+      costBetweenTwoCities = individual[i-1].distanceTo(individual[i]);
+      cost = cost + costBetweenTwoCities;
+    }
     return cost;
-  }*/
+  }
 
   public City[] path(){
-    City path[] = new City[cities.length];
-    for (int i = 0; i< cities.length; i++){
-      path[i] = cities[i];
+    City path[] = new City[individual.length];
+    for (int i = 0; i< individual.length; i++){
+      path[i] = individual[i];
     }
     return path;
   }
   public void mutate() {
-    newPos = RandomUtils.getRandomValue(cities.length);
-    aux = cities[RandomUtils.getRandomValue(cities.length)];
-    cities[RandomUtils.getRandomValue(cities.length)] = cities[newPos];
-    cities[newPos] = aux;
+    newPos = RandomUtils.getRandomValue(individual.length);
+    aux = individual[RandomUtils.getRandomValue(individual.length)];
+    individual[RandomUtils.getRandomValue(individual.length)] = individual[newPos];
+    individual[newPos] = aux;
   }
 
 
   public Individual reproduce() {
-    Individual bob[] = new Individual[cities.length];
-    for(int i=0; i < cities.length; i++){
-      bob[i] = cities[i]; 
+    Individual bob[];
+    for(int i=0; i < individual.length; i++){
+      bob[i] = individual[i]; 
     }
     bob.mutate();
     return Individual;
