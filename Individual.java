@@ -27,17 +27,36 @@ public class Individual {
 
   //Returns the cost assigned to this individual's path.
   public double cost() {
-    
+    double sumOfCost = 0;
+    double costBetweenTwoCities = 0;
+    for(int i=1; i<individual.length; i++) {
+      costBetweenTwoCities = individual[i-1].distanceTo(individual[i]);
+      sumOfCost = sumOfCost + costBetweenTwoCities;
+
+    }
+    return sumOfCost + individual[individual.length-1].distanceTo(individual[0]);
   }
 
   //Performs a mutation of this individual.
   public void mutate() {
-
+    int randomIndex = RandomUtils.getRandomValue(individual.length);
+    int lastIndex = individual.length - 1;
+    City auxiliaryVariable = individual[randomIndex]; //Pointer issue??
+    individual[randomIndex] = individual[lastIndex];
+    individual[lastIndex] = auxiliaryVariable;
   }
-
+ 
   //Returns a new Individual differing from this one by a mutiation.
   public Individual reproduce() {
-
+    City[] offspring = new City[individual.length];
+    for(int i = 0; i < offspring.length; i++){
+      offspring[i] = individual[i];
+    }
+    int randomIndex = RandomUtils.getRandomValue(offspring.length);
+    City auxiliaryVariable = offspring[randomIndex];
+    individual[randomIndex] = offspring[offspring.length-1];
+    offspring[offspring.length-1] = auxiliaryVariable;
+    return 
   }
 
   public String toString() {
