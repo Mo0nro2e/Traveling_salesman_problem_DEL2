@@ -5,16 +5,16 @@ public class Main {
 		Individual bob;
 	 	byer = new CityGenerator().generate();
 	 	bob = new Individual(byer);
-	 	bob.path();
+	 	//bob.path();
 
 
 
-<<<<<<< Updated upstream
+
 		//System.out.println(bob.cost());
-=======
 
-		System.out.println(bob.cost());
->>>>>>> Stashed changes
+
+		//System.out.println(bob.cost());
+
 	}
 
 }
