@@ -6,7 +6,7 @@ public class Event {
 
   //Constructor
   public Event(char type, double time, Individual individual){
-    this.type = type;
+    this.type = Character.toUpperCase(type);
     this.time = time;
     this.individual = individual;
   }
@@ -24,7 +24,18 @@ public class Event {
 
   //Returns a textual representation of this event.
   public String toString() {
-    return "Event type: " + type() + ", time: " + time() + ", individual: " + individual();
+    String eventType = "";
+    switch(type) {
+      case 'M':
+        eventType = "Event type: Mutation, ";
+        break;
+      case 'D':
+        eventType = "Event type: Death, ";
+        break;
+      case 'R':
+        eventType = "Event type: Reproduction, ";
+    }
+    return eventType + "time: " + time + ", individual: " + individual;
   }
 
 }
