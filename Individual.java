@@ -43,7 +43,7 @@ public class Individual{
 
 
   public Individual reproduce() {
-    Individual bob[] = new Individual[cities.length];
+    Individual offSpring[] = individual.path();
     for(int i=0; i < cities.length; i++){
       bob[i] = cities[i]; 
     }
