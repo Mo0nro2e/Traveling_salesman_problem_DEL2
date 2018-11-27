@@ -23,9 +23,14 @@ public class Individual{
     }
   }
 
-  /*public double cost(){
+  public double cost(){
+    double cost = individual[individual.length-1].distanceTo(individual[0]);
+    for(int i=1; i<individual.length; i++) {
+      cost += individual[i-1].distanceTo(individual[i]);
+    }
     return cost;
-  }*/
+    
+  }
 
   public City[] path(){
     City path[] = new City[cities.length];
@@ -47,8 +52,8 @@ public class Individual{
     for(int i=0; i < cities.length; i++){
       bob[i] = cities[i]; 
     }
-    bob.mutate();
-    return Individual;
+    individual.mutate();
+    return individual;
   }
 
     
