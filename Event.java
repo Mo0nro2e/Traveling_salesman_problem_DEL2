@@ -3,10 +3,13 @@ public class Event {
   private char type;
   private double time;
   private Individual individual;
+  public static final char MUTATION = 'M';
+  public static final char REPRODUCTION = 'R';
+  public static final char DEATH = 'D';
 
   //Constructor
   public Event(char type, double time, Individual individual){
-    this.type = Character.toUpperCase(type);
+    this.type = type;
     this.time = time;
     this.individual = individual;
   }
@@ -26,15 +29,16 @@ public class Event {
   public String toString() {
     String eventType = "";
     switch(type) {
-      case 'M':
+      case MUTATION:
         eventType = "Event type: Mutation, ";
         break;
-      case 'D':
+      case DEATH:
         eventType = "Event type: Death, ";
         break;
-      case 'R':
+      case REPRODUCTION:
         eventType = "Event type: Reproduction, ";
     }
+
     return eventType + "time: " + time + ", individual: " + individual;
   }
 
