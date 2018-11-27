@@ -9,7 +9,6 @@ public class Individual{
 
 
   public Individual(City[] cities){
-  
     for (int i = cities.length - 1; i > 0; i--){
       index = RandomUtils.getRandomValue(cities.length);
       if (index != i)
@@ -31,7 +30,7 @@ public class Individual{
   }
 
   public City[] path(){
-    City path[] = new City[individual.length];
+    City[] path = new City[individual.length];
     for (int i = 0; i< individual.length; i++){
       path[i] = individual[i];
     }
@@ -48,13 +47,13 @@ public class Individual{
   public Individual reproduce() {
     Individual offSpring = new Individual(path);
     for(int i=0; i < cities.length; i++){
-      bob[i] = cities[i]; 
+      bob[i] = cities[i];
     }
     offSpring.mutate();
     return offSpring;
   }
 
-    
+
 
 
 
