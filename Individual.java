@@ -46,12 +46,12 @@ public class Individual{
 
 
   public Individual reproduce() {
-    Individual offSpring[] = individual.path();
+    Individual offSpring = new Individual(path);
     for(int i=0; i < cities.length; i++){
       bob[i] = cities[i]; 
     }
-    individual.mutate();
-    return individual;
+    offSpring.mutate();
+    return offSpring;
   }
 
     
