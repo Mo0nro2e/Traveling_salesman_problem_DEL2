@@ -9,10 +9,8 @@ public class Individual {
     for(int i=0; i<cities.length; i++)
       individualPath[i] = cities[i];
     //shuffles the array
-    for(int i=0; i<individualPath.length; i++) {
-      int randomIndex = RandomUtils.getRandomValue(individualPath.length);
-      while(randomIndex == i)
-        randomIndex = RandomUtils.getRandomValue(individualPath.length);
+    for(int i=individualPath.length-1; i>0; i--) {
+      int randomIndex = RandomUtils.getRandomValue(i);
       City auxiliaryVariable = individualPath[randomIndex];
       individualPath[randomIndex] = individualPath[i];
       individualPath[i] = auxiliaryVariable;
